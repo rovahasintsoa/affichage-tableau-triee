@@ -9,8 +9,9 @@
 <body>
     <p id="demo"></p>
     <select name="select" id="select">
+        <option value="default" onclick="fonction3()">default</option>
         <option value="A-Z" onclick="fonction1()">A-Z</option>
-        <option value="Z-A" onclick="fonction2">Z-A</option>
+        <option value="Z-A" onclick="fonction2()">Z-A</option>
     </select>
     <div style="width:100%">
         <table border="1" style="text-align:center; margin:0 auto; width:50%">
@@ -20,16 +21,6 @@
                 <th>FirstName</th>
             </thead>
             <tbody id="table">
-                <tr>
-                    <td>1</td>
-                    <td>Ando</td>
-                    <td>Rova</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Tamby</td>
-                    <td>Riantso</td>
-                </tr>
             <tbody>
         </table>
     </div>
