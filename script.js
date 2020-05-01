@@ -31,6 +31,7 @@ var data = [{
     lastName: "Zandry",
     firstName: "Gasy"
 }, ]
+var dataDefault = data.slice(0);
 
 
 function sorting_ascendingly_on(arr, prop){
@@ -53,13 +54,18 @@ function sorting_descendingly_on(arr, prop){
 	})
 	return res
 }
+function  remove() {
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
+}
 function creationTable(data) {
+    for (let i = 0; i < data.length; i++) {
     let table = document.getElementById("table");
     let elemTr = document.createElement("TR");
     let elemTdi = document.createElement("TD");
     let elemTdf = document.createElement("TD");
     let elemTdl = document.createElement("TD");
-    for (let i = 0; i < data.length; i++) {
     let texti = document.createTextNode(i);
     let textf = document.createTextNode(data[i].firstName);
     let textl = document.createTextNode(data[i].lastName);
@@ -73,4 +79,17 @@ function creationTable(data) {
     }
     
 }
-
+creationTable(data);
+function fonction2() {
+    remove();
+    creationTable(sorting_descendingly_on(data,"lastName"));
+}
+function fonction1() {
+    remove();
+    creationTable(sorting_ascendingly_on(data,"lastName"));
+}
+function fonction3() {
+    remove();
+    creationTable(dataDefault);
+    
+}
