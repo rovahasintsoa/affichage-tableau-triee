@@ -32,7 +32,12 @@ var data = [{
     firstName: "Gasy"
 }, ]
 var dataDefault = data.slice(0);
-
+function recuperationData(){
+    let last = document.getElementById("last").value;
+    let first = document.getElementById("first").value;
+    let data1 ={lastName:last, firstName: first};
+    return data1;
+}
 
 function sorting_ascendingly_on(arr, prop){
 	
@@ -66,7 +71,7 @@ function creationTable(data) {
     let elemTdi = document.createElement("TD");
     let elemTdf = document.createElement("TD");
     let elemTdl = document.createElement("TD");
-    let texti = document.createTextNode(i);
+    let texti = document.createTextNode(i+1);
     let textf = document.createTextNode(data[i].firstName);
     let textl = document.createTextNode(data[i].lastName);
     elemTdi.appendChild(texti);
@@ -91,5 +96,11 @@ function fonction1() {
 function fonction3() {
     remove();
     creationTable(dataDefault);
+    
+}
+function fonction() {
+    remove();
+    data.splice(data.length,0,recuperationData());
+    creationTable(data);
     
 }
